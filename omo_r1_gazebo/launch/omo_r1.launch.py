@@ -13,7 +13,7 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    world_file_name = 'turtlebot3_worlds/omo_r1mini.model'
+    world_file_name = 'turtlebot3_worlds/omo_r1.model'
     world = os.path.join(get_package_share_directory('omo_r1_gazebo'),
                          'worlds', world_file_name)
     launch_file_dir = os.path.join(get_package_share_directory('omo_r1_gazebo'), 'launch')

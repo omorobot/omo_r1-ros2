@@ -28,7 +28,7 @@
         <pose>0 0 -0.01605 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1/meshes/bases/body_assy.dae</uri>
+            <uri>model://omo_r1/meshes/bases/body_assy.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -192,13 +192,17 @@
       <collision name="caster_back_right_link_collision">
         <pose>-0.33 -0.148 -0.06 0 0 0</pose>
         <geometry>
-          <box size="0.01 0.01 0.01"/>
+          <box> 
+            <size>0.01 0.01 0.01"</size>
+          </box>
         </geometry>
       </collision>
       <visual name="caster_back_right_link_visual">
         <pose>-0.10375 0.0 -0.00180 0 0 0</pose>
         <geometry>
-          <box size="0.01 0.01 0.01"/>
+          <box> 
+            <size>0.01 0.01 0.01"</size>
+          </box>
         </geometry>
       </visual>
     </link>
@@ -225,13 +229,17 @@
       <collision name="caster_back_left_link_collision">
         <pose>-0.33 0.148 -0.06 0 0 0</pose>
         <geometry>
-          <box size="0.01 0.01 0.01"/>
+          <box> 
+            <size>0.01 0.01 0.01"</size>
+          </box>
         </geometry>
       </collision>
       <visual name="caster_back_left_link_visual">
         <pose>-0.10375 0.0 -0.00180 0 0 0</pose>
         <geometry>
-          <box size="0.01 0.01 0.01"/>
+          <box> 
+            <size>0.01 0.01 0.01"</size>
+          </box>
         </geometry>
       </visual>
     </link>
@@ -383,10 +391,10 @@
       <left_joint>wheel_left_joint</left_joint>
       <right_joint>wheel_right_joint</right_joint>
 
-      <wheel_separation>0.170</wheel_separation>
-      <wheel_diameter>0.067</wheel_diameter>
+      <wheel_separation>0.650</wheel_separation>
+      <wheel_diameter>0.22</wheel_diameter>
 
-      <max_wheel_torque>40</max_wheel_torque>
+      <max_wheel_torque>100</max_wheel_torque>
       <max_wheel_acceleration>1.0</max_wheel_acceleration>
 
       <command_topic>cmd_vel</command_topic>
