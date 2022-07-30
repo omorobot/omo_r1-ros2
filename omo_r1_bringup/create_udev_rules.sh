@@ -8,7 +8,7 @@ echo "Motor Driver (USB Serial from RS232) : /dev/ttyUSBx to /dev/ttyMotor :"
 if [ -f "/etc/udev/rules.d/98-omo-r1-mcu" ]; then
     echo "98-omo-r1-mcu file already exist."
 else 
-    echo 'SUBSYSTEM=="tty", KERNELS=="3-1", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE:="0666", GROUP:="dialout", SYMLINK+="ttyMotor"' > /etc/udev/rules.d/98-omo-r1-mcu.rules   
+    echo 'SUBSYSTEM=="tty", KERNELS=="3-1", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE:="0666", GROUP:="dialout", SYMLINK+="ttyMCU"' > /etc/udev/rules.d/98-omo-r1-mcu.rules   
     echo '98-omo-r1-mcu created'
 fi
 
