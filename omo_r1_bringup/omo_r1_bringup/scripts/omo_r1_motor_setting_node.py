@@ -7,7 +7,7 @@ import time
 from .driver.packet import *
 from .driver.port import *
 
-class OMOR1MiniMotorSettingNode(Node):
+class OMOR1MotorSettingNode(Node):
   def __init__(self):
     super().__init__('omo_r1_motor_setting')
 
@@ -46,11 +46,11 @@ class OMOR1MiniMotorSettingNode(Node):
 
 def main(args=None):
   rclpy.init(args=args)
-  omoR1MiniMotorSettingNode = OMOR1MiniMotorSettingNode()
+  omoR1MotorSettingNode = OMOR1MotorSettingNode()
   try:
-    rclpy.spin(omoR1MiniMotorSettingNode)
+    rclpy.spin(omoR1MotorSettingNode)
   finally:
-    omoR1MiniMotorSettingNode.destroy_node()
+    omoR1MotorSettingNode.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':

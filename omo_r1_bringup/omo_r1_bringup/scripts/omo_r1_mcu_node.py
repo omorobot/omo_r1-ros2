@@ -74,7 +74,7 @@ class ComplementaryFilter():
     #print self.theta*180/3.141, self.wheel_ang*180/3.141, gyro, d_time
     return self.theta
 
-class OMOR1MiniNode(Node):
+class OMOR1Node(Node):
   def __init__(self):
     super().__init__('omo_r1_motor_setting')
     # Declare parameters from YAML
@@ -172,7 +172,7 @@ class OMOR1MiniNode(Node):
     if self.use_gyro:
         self.calc_yaw.wheel_ang += orient_vel * dt
         self.odom_pose.theta = self.calc_yaw.calc_filter(vel_z*math.pi/180., dt)
-        self.get_logger().info('R1mini state : whl pos %1.2f, %1.2f, gyro : %1.2f, whl odom : %1.2f, robot theta : %1.2f' 
+        self.get_logger().info('R1 state : whl pos %1.2f, %1.2f, gyro : %1.2f, whl odom : %1.2f, robot theta : %1.2f' 
                     %(odo_l, odo_r, vel_z,
                     self.calc_yaw.wheel_ang*180/math.pi, 
                     self.d_odom_pose['theta']*180/math.pi ))
@@ -336,10 +336,10 @@ class OMOR1MiniNode(Node):
 
 def main(args=None):
   rclpy.init(args=args)
-  omoR1MiniNode = OMOR1MiniNode()
-  rclpy.spin(omoR1MiniNode)
+  omoR1Node = OMOR1Node()
+  rclpy.spin(omoR1Node)
 
-  omoR1MiniNode.destroy_node()
+  omoR1Node.destroy_node()
   rclpy.shutdown()
 
 if __name__ == '__main__':

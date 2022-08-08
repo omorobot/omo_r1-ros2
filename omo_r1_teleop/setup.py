@@ -31,7 +31,7 @@ setup(
         'Topic :: Software Development',
     ],
     description=(
-        'Teleoperation node using keyboard or joystick for the OMORobot R1 Mini'
+        'Teleoperation node using keyboard or joystick for the OMORobot R1'
     ),
     license='Apache License, Version 2.0',
     tests_require=['pytest'],

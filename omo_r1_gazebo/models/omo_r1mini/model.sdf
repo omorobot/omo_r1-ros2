@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="omo_r1mini">
+  <model name="omo_r1">
     <pose>0.0 0.0 0.02 0.0 0.0 0.0</pose>
 
     <link name="base_footprint"/>
@@ -28,7 +28,7 @@
         <pose>0 0 -0.01605 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/bases/body_assy.dae</uri>
+            <uri>model://omo_r1/meshes/bases/body_assy.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -37,7 +37,7 @@
         <pose>0 0 -0.01605 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/bases/body_assy.dae</uri>
+            <uri>model://omo_r1/meshes/bases/body_assy.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -67,7 +67,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/bases/housing_body.dae</uri>
+            <uri>model://omo_r1/meshes/bases/housing_body.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -76,7 +76,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/bases/housing_body.dae</uri>
+            <uri>model://omo_r1/meshes/bases/housing_body.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -139,7 +139,7 @@
         <pose>0 0.0835 -0.01605 0 0 1.57079633</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/wheels/wheel_assy.dae</uri>
+            <uri>model://omo_r1/meshes/wheels/wheel_assy.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -202,7 +202,7 @@
         <pose>0 -0.0835 -0.01605 0 0 -1.57079633</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/wheels/wheel_assy.dae</uri>
+            <uri>model://omo_r1/meshes/wheels/wheel_assy.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -232,7 +232,7 @@
         <pose>-0.10375 0.0 -0.00180 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/wheels/caster_wheel_mount.dae</uri>
+            <uri>model://omo_r1/meshes/wheels/caster_wheel_mount.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -241,7 +241,7 @@
         <pose>-0.10375 0.0 -0.00180 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/wheels/caster_wheel_mount.dae</uri>
+            <uri>model://omo_r1/meshes/wheels/caster_wheel_mount.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -271,7 +271,7 @@
         <pose>-0.10375 0 -0.01280 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/wheels/caster_wheel_rotate.dae</uri>
+            <uri>model://omo_r1/meshes/wheels/caster_wheel_rotate.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -280,7 +280,7 @@
         <pose>-0.10375 0 -0.01280 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/wheels/caster_wheel_rotate.dae</uri>
+            <uri>model://omo_r1/meshes/wheels/caster_wheel_rotate.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -329,7 +329,7 @@
         <pose>-0.11525 0 -0.0323 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/wheels/caster_wheel.dae</uri>
+            <uri>model://omo_r1/meshes/wheels/caster_wheel.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -426,7 +426,7 @@
         <pose>0 0 0.036 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/sensors/ydlidar_assy.dae</uri>
+            <uri>model://omo_r1/meshes/sensors/ydlidar_assy.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -436,7 +436,7 @@
         <pose>0 0 0.036 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1mini/meshes/sensors/ydlidar_assy.dae</uri>
+            <uri>model://omo_r1/meshes/sensors/ydlidar_assy.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

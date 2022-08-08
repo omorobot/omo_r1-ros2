@@ -44,7 +44,7 @@
     </physics>
 
     <include>
-      <uri>model://omo_r1mini</uri>
+      <uri>model://omo_r1</uri>
     </include>
 
   </world>
