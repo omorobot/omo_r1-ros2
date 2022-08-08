@@ -43,7 +43,7 @@ class TeleopJoyNode(Node):
         self.colorIdx = 0
         self.colors = [ [255, 0, 0], [255,50, 0], [255,255,0], [0,255,0], 
             [0,0,255], [0,5,255], [100,0,255], [255,255,255] ]
-        print(' R1mini Teleop Joystick controller')
+        print(' R1 Teleop Joystick controller')
         # Get parameter values
         self.max_fwd_vel = self.get_parameter_or('max_fwd_m_s', Parameter('max_fwd_m_s', Parameter.Type.DOUBLE, 0.2)).get_parameter_value().double_value
         self.max_rev_vel = self.get_parameter_or('max_rev_m_s', Parameter('max_rev_m_s', Parameter.Type.DOUBLE, 0.2)).get_parameter_value().double_value

@@ -1,4 +1,4 @@
-# R1mini 공식 ROS2 패키지
+# R1 공식 ROS2 패키지
 
 ## 소스 빌드하기
 
@@ -57,16 +57,16 @@ cd {$workspace_path}
 source install/setup.bash
 ```
 
-## R1mini 로봇 조작하기
+## R1 로봇 조작하기
 
 - YD-라이다의 USB포트 경로를 /dev/ttyLiDAR 로 변경하기 위해 다음을 수행합니다.
 
 ```bash
-cd {$workspace_path}/src/omo_r1mini/omo_r1_bringup
+cd {$workspace_path}/src/omo_r1/omo_r1_bringup
 sudo sh create_udev_rules.sh
 ```
 
-- R1mini 브링업
+- R1 브링업
 
 ```bash
   cd {$workspace_path}
@@ -76,7 +76,7 @@ sudo sh create_udev_rules.sh
 - 시뮬레이션 환경에서 로봇을 브링업 하는 방법은 다음과 같습니다.
 ```bash
   cd {$workspace_path}
-  ros2 launch omo_r1_gazebo omo_r1mini.launch.py
+  ros2 launch omo_r1_gazebo omo_r1.launch.py
 ```
 
 - 키보드를 사용하여 조작하기 위해 키보드 Teleop 노드를 실행합니다.

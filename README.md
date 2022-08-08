@@ -1,6 +1,6 @@
-# ROS2 packages for omorobot r1 mini
+# ROS2 packages for omorobot r1
 
-This project is to demonstrate R1mini control and navigation in ROS2-foxy environment.  
+This project is to demonstrate R1 control and navigation in ROS2-foxy environment.  
 한국어 사용자는 다음 **한국어**[문서](README_KR.md)를 참조하십시오.  
 
 ## Build source
@@ -9,7 +9,7 @@ This project is to demonstrate R1mini control and navigation in ROS2-foxy enviro
 
 ```bash
   cd {$workspace_path}/src/
-  git clone https://github.com/omorobot/omo_r1mini-foxy.git
+  git clone https://github.com/omorobot/omo_r1-foxy.git
   git clone https://github.com/PinkWink/YDLidar-SDK.git
   git clone https://github.com/PinkWink/ydlidar_ros2_driver.git
 ```
@@ -60,7 +60,7 @@ pip install pyserial
 - To give authority for driver access to MCU and LiDAR
 
 ```bash
-cd {$workspace_path}/src/omo_r1mini/omo_r1_bringup
+cd {$workspace_path}/src/omo_r1/omo_r1_bringup
 sudo sh create_udev_rules.sh
 ```
 
@@ -74,7 +74,7 @@ ros2 launch omo_r1_bringup omo_r1_bringup.launch.py
 - To bringup robot (in **simulation environment**)
 ```bash
 cd {$workspace_path}
-ros2 launch omo_r1_gazebo omo_r1mini.launch.py
+ros2 launch omo_r1_gazebo omo_r1.launch.py
 ```
 - To teleoperate the robot using **KEYBOARD**
 

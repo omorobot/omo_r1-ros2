@@ -4,7 +4,7 @@
   <name>omo_r1_bringup</name>
   <version>0.0.1</version>
   <description>
-    ROS 2 launch scripts for starting the OMORobot R1 Mini
+    ROS 2 launch scripts for starting the OMORobot R1
   </description>
   <license>Apache 2.0</license>
   <url type="repository">https://github.com/omorobot/omo_r1-foxy</url>

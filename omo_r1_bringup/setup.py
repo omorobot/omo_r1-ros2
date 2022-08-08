@@ -31,7 +31,7 @@ setup(
         'Topic :: Software Development',
     ],
     description=(
-        'OMORobot R1 Mini driver node that include iff drive controller, odometry and tf node'
+        'OMORobot R1 driver node that include iff drive controller, odometry and tf node'
     ),
     license='Apache License, Version 2.0',
     tests_require=['pytest'],
