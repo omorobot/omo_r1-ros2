@@ -55,7 +55,7 @@ LIN_VEL_STEP_SIZE = 0.01
 ANG_VEL_STEP_SIZE = 0.1
 
 msg = """
-Control Your OMORobot R1!
+Control Your OMORobot R1 Mini!
 ---------------------------
 Moving around:
         w

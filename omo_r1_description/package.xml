@@ -4,7 +4,7 @@
   <name>omo_r1_description</name>
   <version>0.0.1</version>
   <description>
-    3D models of the OMORobot R1 for simulation and visualization
+    3D models of the OMORobot R1 Mini for simulation and visualization
   </description>
   <license>Apache 2.0</license>
   <url type="repository">https://github.com/omorobot/omo_r1-foxy</url>
