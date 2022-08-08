@@ -100,7 +100,7 @@
         <pose>-0.1105 -0.06 0.01104 -1.57 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1/meshes/wheels/omo_r1_wheel.stl</uri>
+            <uri>model://omo_r1mini/meshes/wheels/omo_r1_wheel.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -163,7 +163,7 @@
         <pose>0 -0.0835 -0.01605 0 0 -1.57079633</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1/meshes/wheels/omo_r1_wheel.stl</uri>
+            <uri>model://omo_r1mini/meshes/wheels/omo_r1_wheel.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -334,7 +334,7 @@
         <pose>0 0 0.23 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1/meshes/sensors/omo_r1_lidar.stl</uri>
+            <uri>model://omo_r1mini/meshes/sensors/omo_r1_lidar.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -344,7 +344,7 @@
         <pose>0 0 0.23 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://omo_r1/meshes/sensors/omo_r1_lidar.stl</uri>
+            <uri>model://omo_r1mini/meshes/sensors/omo_r1_lidar.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>

@@ -51,11 +51,11 @@ else:
 OMO_r1_MAX_LIN_VEL = 0.50
 OMO_r1_MAX_ANG_VEL = 5.70
 
-LIN_VEL_STEP_SIZE = 0.1 #0.01
-ANG_VEL_STEP_SIZE = 0.1 #0.1
+LIN_VEL_STEP_SIZE = 0.01
+ANG_VEL_STEP_SIZE = 0.1
 
 msg = """
-Control Your OMORobot R1!
+Control Your OMORobot R1 Mini!
 ---------------------------
 Moving around:
         w

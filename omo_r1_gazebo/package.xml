@@ -4,7 +4,7 @@
   <name>omo_r1_gazebo</name>
   <version>0.0.1</version>
   <description>
-    Gazebo simulation package for OMORobot R1
+    Gazebo simulation package for OMORobot R1 Mini
   </description>
   <license>Apache 2.0</license>
   <url type="repository">https://github.com/omorobot/omo_r1-foxy</url>
