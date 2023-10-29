@@ -81,11 +81,11 @@ class OMOR1MiniNode(Node):
     self.declare_parameters(
       namespace='',
       parameters=[
-        ('port.name', None),
-        ('port.baudrate', None),
-        ('motor.gear_ratio', None),
-        ('motor.max_lin_vel_x', None),
-        ('sensor.enc_pulse', None),
+        ('port.name', Parameter.Type.STRING),
+        ('port.baudrate', Parameter.Type.INTEGER),
+        ('motor.gear_ratio', Parameter.Type.DOUBLE),
+        # ('motor.max_lin_vel_x', None),
+        ('sensor.enc_pulse', Parameter.Type.DOUBLE),
       ])
     # Get parameter values
     _port_name = self.get_parameter_or('port.name', Parameter('port.name', Parameter.Type.STRING, '/dev/ttyMotor')).get_parameter_value().string_value
