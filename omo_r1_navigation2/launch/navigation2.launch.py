@@ -36,7 +36,7 @@ def generate_launch_description():
             'map',
             'turtlebot3_world.yaml'))
 
-    param_file_name = 'omo_r1mini.yaml'
+    param_file_name = 'omo_r1.yaml'
     param_dir = LaunchConfiguration(
         'params_file',
         default=os.path.join(
