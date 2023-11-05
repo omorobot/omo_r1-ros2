@@ -1,68 +1,48 @@
-# ROS2 packages for omorobot r1 mini
+# ros2 humble packages for omorobot r1d2
 
-This project is to demonstrate R1mini control and navigation in ROS2-foxy environment.  
+This project is to demonstrate r1d2 control and navigation in ros2-humble environment.  
 한국어 사용자는 다음 **한국어**[문서](README_KR.md)를 참조하십시오.  
 
-## Build source
+## Install ros2 humble
 
 ### Clone source
 
 ```bash
-  cd {$workspace_path}/src/
-  git clone https://github.com/omorobot/omo_r1mini-foxy.git
-  git clone https://github.com/PinkWink/YDLidar-SDK.git
-  git clone https://github.com/PinkWink/ydlidar_ros2_driver.git
+  cd ~
+  git clone https://github.com/t-shaped-person/quick-ros2-setup
 ```
 
-### Build LiDAR's SDK
+### Run script
 
 ```bash
-  cd {$workspace_path}/src/YDLidar-SDK
-  cd build
-  cmake ..
-  make
-  sudo make install
+  cd ~/quick-ros2-setup
+  ./1_ros2_humble_install.sh
 ```
 
-### Install dependency packages
+## Make workspace and install packages
 
-Following additional packages may be reuqired to be installed.  
-- gazebo 
-- ros-foxy-gazebo-ros-pkgs
-- cartographer-ros  
-- nav2_map_server
-- pyserial
+### Clone source
 
 ```bash
-sudo apt install -y ros-foxy-gazebo-ros ros-foxy-cartographer-ros ros-foxy-nav2-map-server ros-foxy-gazebo-ros-pkgs
-
-pip install pyserial
+  cd ~
+  git clone https://github.com/t-shaped-person/quick-ros2-setup
 ```
 
-### Build ROS2 source
-
-- To build
+### Run script for workspace and packages
 
 ```bash
-  cd {$workspace_path}
-  colcon build --symlink-install
+  cd ~/quick-ros2-setup
+  ./2_humble_ws_setup_r1d2.sh
 ```
 
-- To enable the built source into ROS2 environment
+### Run script for udev rules
 
 ```bash
-  cd {$workspace_path}
-  ./install/setup.bash
+  cd ~/quick-ros2-setup
+  sudo ./3_udev_rules_r1d2.sh
 ```
 
 ## Play with the robot
-
-- To give authority for driver access to MCU and LiDAR
-
-```bash
-cd {$workspace_path}/src/omo_r1mini/omo_r1_bringup
-sudo sh create_udev_rules.sh
-```
 
 - To bringup robot
 
@@ -71,11 +51,6 @@ cd {$workspace_path}
 ros2 launch omo_r1_bringup omo_r1_bringup.launch.py
 ```
 
-- To bringup robot (in **simulation environment**)
-```bash
-cd {$workspace_path}
-ros2 launch omo_r1_gazebo omo_r1mini.launch.py
-```
 - To teleoperate the robot using **KEYBOARD**
 
 ```bash
