@@ -330,7 +330,7 @@ class OMOR1MiniNode(Node):
 
   def calibrate_gyro(self, request):
     command = "$sCALG,1"
-    printf("SERVICE: CALIBRATE GYRO")
+    print("SERVICE: CALIBRATE GYRO")
     self.ph.write_port(command)
     return CalgResponse()
 
@@ -339,6 +339,7 @@ def main(args=None):
   omoR1MiniNode = OMOR1MiniNode()
   rclpy.spin(omoR1MiniNode)
 
+  omoR1MiniNode.ph.close_port()
   omoR1MiniNode.destroy_node()
   rclpy.shutdown()
 
