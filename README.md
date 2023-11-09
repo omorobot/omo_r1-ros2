@@ -1,7 +1,6 @@
 # ros2 humble packages for omorobot r1d2
 
-This project is to demonstrate r1d2 control and navigation in ros2-humble environment.  
-한국어 사용자는 다음 **한국어**[문서](README_KR.md)를 참조하십시오.  
+This project is to demonstrate r1d2 control and navigation in ros2-humble environment.
 
 
 ## Install ros2 humble
