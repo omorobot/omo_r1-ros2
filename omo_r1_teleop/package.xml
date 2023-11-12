@@ -2,17 +2,19 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>omo_r1_teleop</name>
-  <version>0.0.1</version>
-  <description>
-    Teleoperation node using keyboard for the OMORobot R1 Mini
-  </description>
-  <license>Apache 2.0</license>
-  <url type="repository">https://github.com/omorobot/omo_r1-foxy</url>
-  <maintainer email="kyuhyong@gmail.com">Kyuhyong You</maintainer>
-  <author email="bishopearson@gmail.com">Bishop Pearson</author>
-  <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>rclpy</exec_depend>
-  <exec_depend>omo_r1_interfaces</exec_depend>
+  <version>0.0.0</version>
+  <description>Teleop package</description>
+  <maintainer email="kucira00@gmail.com">Dr.K</maintainer>
+  <license>Apache License, Version 2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
   <export>
     <build_type>ament_python</build_type>
   </export>
