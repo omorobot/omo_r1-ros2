@@ -1,79 +1,48 @@
 #!/usr/bin/env python3
-
-# Copyright 2019 Open Source Robotics Foundation, Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-# Author: Bishop Pearson
-
 import os
-from ament_index_python.packages import get_package_share_directory
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
 from launch_ros.actions import Node
-from launch.substitutions import LaunchConfiguration
-from launch.actions import IncludeLaunchDescription
+from launch import LaunchDescription
+from ament_index_python.packages import get_package_share_directory
+from launch.substitutions import LaunchConfiguration, ThisLaunchFileDir
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import ThisLaunchFileDir
-
 
 def generate_launch_description():
-    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    omo_r1_cartographer_prefix = get_package_share_directory('omo_r1_cartographer')
-    cartographer_config_dir = LaunchConfiguration('cartographer_config_dir', default=os.path.join(
-                                                  omo_r1_cartographer_prefix, 'config'))
-    configuration_basename = LaunchConfiguration('configuration_basename',
-                                                 default='omo_r1_lidar.lua')
+    cartographer_dir = get_package_share_directory('omo_r1_cartographer')
 
-    resolution = LaunchConfiguration('resolution', default='0.05')
+    configuration_basename = LaunchConfiguration('configuration_basename', default='omo_r1.lua')
+    configuration_directory = LaunchConfiguration('configuration_directory', default=os.path.join(cartographer_dir, 'config'))
     publish_period_sec = LaunchConfiguration('publish_period_sec', default='1.0')
+    resolution = LaunchConfiguration('resolution', default='0.05')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
-    return LaunchDescription([
-        DeclareLaunchArgument(
-            'cartographer_config_dir',
-            default_value=cartographer_config_dir,
-            description='Full path to config file to load'),
-        DeclareLaunchArgument(
-            'configuration_basename',
-            default_value=configuration_basename,
-            description='Name of lua file for cartographer'),
-        DeclareLaunchArgument(
-            'use_sim_time',
-            default_value='false',
-            description='Use simulation (Gazebo) clock if true'),
+    configuration_basename_arg = DeclareLaunchArgument('configuration_basename', default_value=configuration_basename)
+    configuration_directory_arg = DeclareLaunchArgument('configuration_directory', default_value=configuration_directory)
+    publish_period_sec_arg = DeclareLaunchArgument('publish_period_sec', default_value=publish_period_sec)
+    resolution_arg = DeclareLaunchArgument('resolution', default_value=resolution)
+    use_sim_time_arg = DeclareLaunchArgument('use_sim_time', default_value=use_sim_time)
 
-        Node(
-            package='cartographer_ros',
-            executable='cartographer_node',
-            name='cartographer_node',
-            output='screen',
-            parameters=[{'use_sim_time': use_sim_time}],
-            arguments=['-configuration_directory', cartographer_config_dir,
-                       '-configuration_basename', configuration_basename]),
+    cartographer_node = Node(
+        package='cartographer_ros',
+        executable='cartographer_node',
+        name='cartographer_node',
+        output='screen',
+        arguments=['-configuration_basename', configuration_basename, '-configuration_directory', configuration_directory],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
 
-        DeclareLaunchArgument(
-            'resolution',
-            default_value=resolution,
-            description='Resolution of a grid cell in the published occupancy grid'),
+    occupancy_grid_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([ThisLaunchFileDir(), '/occupancy_grid.launch.py']),
+        launch_arguments={'publish_period_sec': publish_period_sec, 'resolution': resolution, 'use_sim_time': use_sim_time}.items()
+    )
 
-        DeclareLaunchArgument(
-            'publish_period_sec',
-            default_value=publish_period_sec,
-            description='OccupancyGrid publishing period'),
+    ld = LaunchDescription()
+    ld.add_action(configuration_basename_arg)
+    ld.add_action(configuration_directory_arg)
+    ld.add_action(publish_period_sec_arg)
+    ld.add_action(resolution_arg)
+    ld.add_action(use_sim_time_arg)
+    ld.add_action(cartographer_node)
+    ld.add_action(occupancy_grid_node)
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([ThisLaunchFileDir(), '/occupancy_grid.launch.py']),
-            launch_arguments={'use_sim_time': use_sim_time, 'resolution': resolution,
-                              'publish_period_sec': publish_period_sec}.items(),
-        ),
-    ])
+    return ld
