@@ -2,17 +2,20 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>omo_r1_navigation2</name>
-  <version>0.0.1</version>
-  <description>
-    ROS 2 launch scripts for navigation2
-  </description> 
-  <license>Apache 2.0</license>
-  <url type="repository">https://github.com/omorobot/omo_r1-foxy</url>
-  <maintainer email="kyuhyong@gmail.com">Kyuhyong You</maintainer>
-  <author email="bishopearson@gmail.com">Bishop Pearson</author>
-  <buildtool_depend>ament_cmake</buildtool_depend>
-  <exec_depend>nav2_bringup</exec_depend>
+  <version>0.0.0</version>
+  <description>Navigation2 package</description>
+  <maintainer email="kucira00@gmail.com">Dr.K</maintainer>
+  <license>Apache License, Version 2.0</license>
+
+  <depend>nav2_bringup</depend>
+  <depend>rviz2</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
   <export>
-    <build_type>ament_cmake</build_type>
+    <build_type>ament_python</build_type>
   </export>
 </package>
