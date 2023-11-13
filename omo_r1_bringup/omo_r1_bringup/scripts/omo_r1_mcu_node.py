@@ -90,10 +90,10 @@ class OMOR1MiniNode(Node):
     # Get parameter values
     _port_name = self.get_parameter_or('port.name', Parameter('port.name', Parameter.Type.STRING, '/dev/ttyMotor')).get_parameter_value().string_value
     _port_baudrate = self.get_parameter_or('port.baudrate', Parameter('port.baudrate', Parameter.Type.INTEGER, 115200)).get_parameter_value().integer_value
-    self.gear_ratio = self.get_parameter_or('motor.gear_ratio', Parameter('motor.gear_ratio', Parameter.Type.DOUBLE, 21.3)).get_parameter_value().double_value
-    self.wheel_separation = self.get_parameter_or('wheel.separation', Parameter('wheel.separation', Parameter.Type.DOUBLE, 0.17)).get_parameter_value().double_value # 0.085 cm x 2
-    self.wheel_radius = self.get_parameter_or('wheel.radius', Parameter('wheel.radius', Parameter.Type.DOUBLE, 0.0335)).get_parameter_value().double_value
-    self.enc_pulse = self.get_parameter_or('sensor.enc_pulse', Parameter('sensor.enc_pulse', Parameter.Type.DOUBLE, 44.0)).get_parameter_value().double_value
+    self.gear_ratio = self.get_parameter_or('motor.gear_ratio', Parameter('motor.gear_ratio', Parameter.Type.DOUBLE, 15.0)).get_parameter_value().double_value
+    self.wheel_separation = self.get_parameter_or('wheel.separation', Parameter('wheel.separation', Parameter.Type.DOUBLE, 0.57)).get_parameter_value().double_value # 0.085 cm x 2
+    self.wheel_radius = self.get_parameter_or('wheel.radius', Parameter('wheel.radius', Parameter.Type.DOUBLE, 0.1)).get_parameter_value().double_value
+    self.enc_pulse = self.get_parameter_or('sensor.enc_pulse', Parameter('sensor.enc_pulse', Parameter.Type.DOUBLE, 60000.0)).get_parameter_value().double_value
     self.use_gyro = self.get_parameter_or('sensor.use_gyro', Parameter('sensor.use_gyro', Parameter.Type.BOOL, False)).get_parameter_value().bool_value
     print('GEAR RATIO:\t\t%s'%(self.gear_ratio))
     print('WHEEL SEPARATION:\t%s'%(self.wheel_separation))
@@ -118,9 +118,9 @@ class OMOR1MiniNode(Node):
     self.ph.set_periodic_info(50)
 
     self.max_lin_vel_x = self.get_parameter_or('/motor/max_lin_vel_x', 
-                Parameter('/motor/max_lin_vel_x', Parameter.Type.DOUBLE, 1.2)).get_parameter_value().double_value
+                Parameter('/motor/max_lin_vel_x', Parameter.Type.DOUBLE, 0.6)).get_parameter_value().double_value
     self.max_ang_vel_z = self.get_parameter_or('/motor/max_ang_vel_z', 
-                Parameter('/motor/max_ang_vel_z', Parameter.Type.DOUBLE, 2.5)).get_parameter_value().double_value
+                Parameter('/motor/max_ang_vel_z', Parameter.Type.DOUBLE, 1.0)).get_parameter_value().double_value
     self.odom_pose = OdomPose()
     self.odom_pose.timestamp = self.get_clock().now()
     self.odom_pose.pre_timestamp = self.get_clock().now()
@@ -172,7 +172,7 @@ class OMOR1MiniNode(Node):
     if self.use_gyro:
         self.calc_yaw.wheel_ang += orient_vel * dt
         self.odom_pose.theta = self.calc_yaw.calc_filter(vel_z*math.pi/180., dt)
-        self.get_logger().info('R1mini state : whl pos %1.2f, %1.2f, gyro : %1.2f, whl odom : %1.2f, robot theta : %1.2f' 
+        self.get_logger().info('omo_r1 state : whl pos %1.2f, %1.2f, gyro : %1.2f, whl odom : %1.2f, robot theta : %1.2f' 
                     %(odo_l, odo_r, vel_z,
                     self.calc_yaw.wheel_ang*180/math.pi, 
                     self.d_odom_pose['theta']*180/math.pi ))
