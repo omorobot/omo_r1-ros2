@@ -120,7 +120,7 @@ class OMOR1MiniNode(Node):
     self.max_lin_vel_x = self.get_parameter_or('/motor/max_lin_vel_x', 
                 Parameter('/motor/max_lin_vel_x', Parameter.Type.DOUBLE, 0.6)).get_parameter_value().double_value
     self.max_ang_vel_z = self.get_parameter_or('/motor/max_ang_vel_z', 
-                Parameter('/motor/max_ang_vel_z', Parameter.Type.DOUBLE, 1.0)).get_parameter_value().double_value
+                Parameter('/motor/max_ang_vel_z', Parameter.Type.DOUBLE, 0.5)).get_parameter_value().double_value
     self.odom_pose = OdomPose()
     self.odom_pose.timestamp = self.get_clock().now()
     self.odom_pose.pre_timestamp = self.get_clock().now()

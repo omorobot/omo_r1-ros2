@@ -14,7 +14,7 @@ else:
     import termios
 
 MAX_LIN_VEL = 0.6   # 0.6m/s (600mm/s)
-MAX_ANG_VEL = 1.0   # 1.0rad/s (57.2958degree/s)
+MAX_ANG_VEL = 0.5   # 0.5rad/s (28.6479degree/s)
 STEP_LIN_VEL = 0.05 # 0.05m/s step (50mm/s)
 STEP_ANG_VEL = 0.1  # 0.1rad/s (5.72958degree/s)
 
