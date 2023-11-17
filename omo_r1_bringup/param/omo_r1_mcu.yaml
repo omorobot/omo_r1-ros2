@@ -5,16 +5,16 @@ omo_r1_mcu_node:
       baudrate: 115200
 
     wheel:
-      separation: 0.17
-      radius: 0.0335
+      separation: 0.57
+      radius: 0.1
 
     motor:
-      gear_ratio: 21.3
-      max_lin_vel_x: 2.0
-      max_rot_vel_z: 2.5
+      gear_ratio: 15.0
+      max_lin_vel_x: 0.6
+      max_rot_vel_z: 0.5
       
     sensor:
-      enc_pulse: 1440.0
+      enc_pulse: 60000.0
 
 diff_drive_controller:
   ros__parameters:
