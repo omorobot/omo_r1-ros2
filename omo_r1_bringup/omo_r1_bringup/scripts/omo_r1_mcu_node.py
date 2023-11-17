@@ -172,7 +172,7 @@ class OMOR1MiniNode(Node):
     if self.use_gyro:
         self.calc_yaw.wheel_ang += orient_vel * dt
         self.odom_pose.theta = self.calc_yaw.calc_filter(vel_z*math.pi/180., dt)
-        self.get_logger().info('R1mini state : whl pos %1.2f, %1.2f, gyro : %1.2f, whl odom : %1.2f, robot theta : %1.2f' 
+        self.get_logger().info('omo_r1 state : whl pos %1.2f, %1.2f, gyro : %1.2f, whl odom : %1.2f, robot theta : %1.2f' 
                     %(odo_l, odo_r, vel_z,
                     self.calc_yaw.wheel_ang*180/math.pi, 
                     self.d_odom_pose['theta']*180/math.pi ))
