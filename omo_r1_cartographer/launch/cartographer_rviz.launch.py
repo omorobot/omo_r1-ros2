@@ -1,49 +1,32 @@
 #!/usr/bin/env python3
-
-# Copyright 2019 Open Source Robotics Foundation, Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-# Author: Bishop Pearson
-
 import os
-from ament_index_python.packages import get_package_share_directory
+from launch_ros.actions import Node
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
-from launch.actions import IncludeLaunchDescription
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import ThisLaunchFileDir
-
+from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
+    cartographer_dir = get_package_share_directory('omo_r1_cartographer')
+
+    rviz_file = LaunchConfiguration('rviz_file', default=os.path.join(cartographer_dir, 'rviz', 'cartographer.rviz'))
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
-    rviz_config_dir = os.path.join(get_package_share_directory('omo_r1_cartographer'),
-                                   'rviz', 'omo_r1_cartographer.rviz')
+    rviz_file_arg = DeclareLaunchArgument('rviz_file', default_value=rviz_file)
+    use_sim_time_arg = DeclareLaunchArgument('use_sim_time', default_value=use_sim_time)
 
-    return LaunchDescription([
-        DeclareLaunchArgument(
-            'use_sim_time',
-            default_value='false',
-            description='Use simulation (Gazebo) clock if true'),
+    rviz2_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        output='screen',
+        arguments=['-d', rviz_file],
+        parameters=[{'use_sim_time': use_sim_time}],
+    )
 
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            arguments=['-d', rviz_config_dir],
-            parameters=[{'use_sim_time': use_sim_time}],
-            output='screen'),
-    ])
+    ld = LaunchDescription()
+    ld.add_action(rviz_file_arg)
+    ld.add_action(use_sim_time_arg)
+    ld.add_action(rviz2_node)
+
+    return ld

@@ -8,8 +8,8 @@ Panels:
         - /TF1/Frames1
         - /LaserScan1
         - /Cartographer1
-      Splitter Ratio: 0.5794117450714111
-    Tree Height: 785
+      Splitter Ratio: 0.5
+    Tree Height: 787
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -412,6 +412,8 @@ Visualization Manager:
     Frame Rate: 30
   Name: root
   Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
     - Class: rviz_default_plugins/MoveCamera
     - Class: rviz_default_plugins/Select
     - Class: rviz_default_plugins/FocusCamera
@@ -479,6 +481,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
-  Width: 1244
+  Width: 1848
   X: 72
-  Y: 29
+  Y: 27
