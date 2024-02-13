@@ -14,19 +14,19 @@ else:
     import termios
 
 MAX_LIN_VEL = 0.6   # 0.6m/s (600mm/s)
-MAX_ANG_VEL = 0.5   # 0.5rad/s (28.6479degree/s)
+MAX_ANG_VEL = 1.0   # 1.0rad/s (57.2958degree/s), wheel speed: 0.285m/s = 0.57/2*1.0
 STEP_LIN_VEL = 0.05 # 0.05m/s step (50mm/s)
 STEP_ANG_VEL = 0.1  # 0.1rad/s (5.72958degree/s)
 
-msg = '''
+msg = f'''
 Control your mobile robot~~
 ----------------------------------------------------------------------
 Moving around:
         w
     a   s   d
         x
-w/x: increase/decrease linear velocity (omo_r1: ~0.6m/s)
-a/d: increase/decrease angular velocity (omo_r1: ~1.0rad/s)
+w/x: increase/decrease linear velocity (0 ~ {MAX_LIN_VEL}m/s)
+a/d: increase/decrease angular velocity (0 ~ {MAX_ANG_VEL}rad/s)
 space, s: force stop
 ----------------------------------------------------------------------
 CTRL+C to quit
