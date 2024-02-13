@@ -13,7 +13,7 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='Dr.K~',
+    maintainer='Dr.K',
     maintainer_email='kucira00@gmail.com',
     description='Meta package',
     license='Apache License, Version 2.0',
