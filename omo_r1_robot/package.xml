@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>omo_r1_robot</name>
+  <version>0.0.0</version>
+  <description>Robot package</description>
+  <maintainer email="kucira00@gmail.com">Dr.K</maintainer>
+  <license>Apache License, Version 2.0</license>
+
+  <depend>geometry_msgs</depend>
+  <depend>message_filters</depend>
+  <depend>rclpy</depend>
+  <depend>rosidl_default_runtime</depend>
+  <depend>tf2_ros_py</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

@@ -1,0 +1,18 @@
+robot_control:
+  ros__parameters:
+    port:
+      name: "/dev/ttyMCU"
+      baudrate: 115200
+
+    wheel:
+      separation: 0.57
+      radius: 0.1
+
+    motor:
+      gear_ratio: 15.0
+      max_lin_vel: 0.6
+      max_ang_vel: 1.0
+
+    sensor:
+      enc_pulse: 60000.0
+      use_imu: false
