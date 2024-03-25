@@ -59,7 +59,7 @@ def generate_launch_description():
     ),
     
     IncludeLaunchDescription(
-      PythonLaunchDescriptionSource([omo_r1_description_dir, '/omo_r1_state_publisher.launch.py']),
+      PythonLaunchDescriptionSource([omo_r1_description_dir, '/robot_state_publisher.launch.py']),
       launch_arguments={'use_sim_time': use_sim_time}.items(),
     ),
   ])
