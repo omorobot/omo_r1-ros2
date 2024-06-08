@@ -145,8 +145,7 @@ class OMOR1MiniNode(Node):
 
     # Set Periodic data
     self.ph.incomming_info = ['ODO', 'VW', "POSE", "GYRO"]
-    self.ph.update_battery_state()
-    #self.ph.set_periodic_info()
+    # self.ph.update_battery_state()
     sleep(0.01)
     self.ph.set_periodic_info(50)
     
