@@ -29,6 +29,7 @@ class PacketHandler:
       for idx, each in enumerate(self.incomming_info):
          #print("$cREGI," + str(idx) + "," + each)
          self.write_port("$cREGI," + str(idx) + "," + each)
+         sleep(0.02)
 
       self.write_port("$cPERI," + str(param1))
       sleep(0.01)
