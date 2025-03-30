@@ -21,6 +21,9 @@ def generate_launch_description():
         get_package_share_directory('omo_r1_description'),
         'urdf',
         urdf_file_name)
+    
+    with open(urdf, 'r') as infp:
+        robot_description = infp.read()
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -33,6 +36,5 @@ def generate_launch_description():
             executable='robot_state_publisher',
             name='robot_state_publisher',
             output='screen',
-            parameters=[{'use_sim_time': use_sim_time}],
-            arguments=[urdf])
+            parameters=[{'robot_description': robot_description}, {'use_sim_time': use_sim_time}])
     ])
